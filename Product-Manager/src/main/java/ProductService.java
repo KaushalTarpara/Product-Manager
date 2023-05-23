@@ -2,21 +2,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService {
-
+    ProductDB db=new ProductDB();
     List<Product> products=new ArrayList<>();
     public void addProduct(Product p){
-        products.add(p);
+        db.save(p);
+        //products.add(p);
     }
 
     public  List<Product> getAllProduct(){
-        return products;
+       return  db.getAll();
+        // return products;
     }
     public Product getProduct(String name){
-        for(Product pd:products) {
-            if (pd.getName().equals(name) )
-                return pd;
-        }
-            return null;
+//        for(Product pd:products) {
+//            if (pd.getName().equals(name) )
+//                return pd;
+//        }
+           // return null;
+        return db.getProduct(name);
 
     }
 
