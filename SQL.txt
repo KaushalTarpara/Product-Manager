@@ -1,0 +1,3 @@
+==================SQL Query for Product=======================
+create table product(id serial primary key,name text,type text,place text,warranty integer);
+select *from product;
